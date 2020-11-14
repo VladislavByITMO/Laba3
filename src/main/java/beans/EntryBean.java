@@ -32,7 +32,7 @@ public class EntryBean {
 
     public EntryStatus check() {
         return entryChecker.check(entryFactory.buildEntry(this)) ?
-                EntryStatus.INCLUDED :
+                EntryStatus.LALA :
                 EntryStatus.EXCLUDED;
 
     }

@@ -4,9 +4,10 @@ import dao.Entry;
 
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 
 @ManagedBean(name = "entryChecker")
-@ApplicationScoped
+@SessionScoped
 public class EntryChecker {
 
     public boolean check(Entry entry) {

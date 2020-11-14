@@ -15,7 +15,7 @@
     <navigation-rule>
         <from-view-id>/views/check.xhtml</from-view-id>
         <navigation-case>
-            <description>To main page</description>
+            <description>To main pageeeeeee</description>
             <from-outcome>main</from-outcome>
             <to-view-id>/index.xhtml</to-view-id>
         </navigation-case>
