@@ -122,13 +122,20 @@ function getEntries() {
 }
 
 function changeR(r) {
-    drawEntries();
-    $('.draw_r').text(r);
-    $('.draw_-r').text(-r);
-    $('.draw_half_r').text(r / 2);
-    $('.draw_-half_r').text(-r / 2);
+    if(!/^-?\d+(\.|,)?\d*$/i.test(r)){
+
+    }else {
+        drawEntries();
+        $('.draw_r').text(r);
+        $('.draw_-r').text(-r);
+        $('.draw_half_r').text(r / 2);
+        $('.draw_-half_r').text(-r / 2);
+    }
+
 }
 let timerId = setTimeout(function tick() {
     drawEntries();
     timerId = setTimeout(tick, 300); // (*)
 }, 300);
+
+

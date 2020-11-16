@@ -9,11 +9,10 @@
 <h:head>
     <title>Labka</title>
 </h:head>
-<h:body style="background-color: #ffffff" >
+<h:body style="background-color: #ffffff">
     <div style="margin-left: auto; margin-right: auto; display: flex">Лабораторная работа №3 по Веб-программированию</div>
     <div style="margin-left: auto; margin-right: auto; display: flex">Тарасенко Владислав</div>
     <div style="margin-left: auto; margin-right: auto; display: flex">Вариант 10888</div>
-
 
 
     <h:form id="hiddenForm" style="display: none">
@@ -21,7 +20,7 @@
         <h:inputHidden id="pointY" value="#{entry.y}"/>
         <h:inputHidden id="pointR" value="#{entry.r}"/>
         <p:commandButton id="checkButton2" update="entries_table" label="Check value"
-                         icon="pi pi-chevron-circle-right" value="Check" action="#{entry.save}" >
+                         icon="pi pi-chevron-circle-right" value="Check" action="#{entry.save}">
             <p:ajax/>
         </p:commandButton>
     </h:form>
@@ -39,11 +38,11 @@
         <line x1="170" x2="170" y1="130" y2="120" stroke="black"></line>
         <line x1="215" x2="215" y1="130" y2="120" stroke="black"></line>
 
-        <line x1="80"  x2="80"  y1="130" y2="120" stroke="black"></line>
+        <line x1="80" x2="80" y1="130" y2="120" stroke="black"></line>
         <line x1="35" x2="35" y1="130" y2="120" stroke="black"></line>
 
         <line x1="130" x2="120" y1="170" y2="170" stroke="black"></line>
-        <line x1="130" x2="120" y1="215"  y2="215"  stroke="black"></line>
+        <line x1="130" x2="120" y1="215" y2="215" stroke="black"></line>
 
         <line x1="130" x2="120" y1="80" y2="80" stroke="black"></line>
         <line x1="130" x2="120" y1="35" y2="35" stroke="black"></line>
@@ -77,6 +76,7 @@
 
     <h:form id="form">
         <p:panel id="panel" header="Entry" style="margin-bottom: 10px">
+
             <p:messages id="messages"/>
             <h:message for="y" style="color: red"/>
             <h:panelGrid columns="2" cellpadding="5">
@@ -92,24 +92,33 @@
                     <f:selectItem itemValue="2" itemLabel="2"/>
                     <f:selectItem itemValue="3" itemLabel="3"/>
                 </h:selectOneMenu>
+
                 <h:outputLabel for="y" value="Y"/>
-                <h:inputText id="y" value="#{entry.y}" required="true">
+                <h:inputText id="y" value="#{entry.y}" required="true" render="messages">
                     <f:validateDoubleRange minimum="-3" maximum="3"/>
+                    <f:ajax render="messages"/>
                 </h:inputText>
 
 
                 <h:outputLabel for="r" value="R"/>
 
-                <p:spinner id="r" min="0.1" max="3" stepFactor="0.1" required="true" value="#{entry.r}" onchange="changeR(getRValue())"/>
+                <p:spinner id="r" min="0.1" max="3" stepFactor="0.1" required="true" value="#{entry.r}"
+                           onchange="changeR(getRValue());">
+                    <f:validateDoubleRange minimum="0.1" maximum="3"/>
+                    <f:ajax render="messages"/>
+
+                </p:spinner>
+
 
                 <p:commandButton id="checkButton" update="entries_table" label="Check value"
-                                 icon="pi pi-chevron-circle-right" value="Check" action="#{entry.save}" >
+                                 icon="pi pi-chevron-circle-right" value="Check" action="#{entry.save}">
                     <p:ajax/>
                 </p:commandButton>
             </h:panelGrid>
         </p:panel>
     </h:form>
-    <p:dataTable id="entries_table" var="entry" value="#{entries.entries}" style="box-shadow: 1px 1px 1px 1px forestgreen" >
+    <p:dataTable id="entries_table" var="entry" value="#{entries.entries}"
+                 style="box-shadow: 1px 1px 1px 1px forestgreen">
         <p:column headerText="id">
             <h:outputText value="#{entry.id}"/>
         </p:column>
