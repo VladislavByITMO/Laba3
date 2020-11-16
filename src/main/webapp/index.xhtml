@@ -1,45 +1,39 @@
-<?xml version="1.0" encoding="UTF-8"?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+<html xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+>
 
-<h:head>
-    <title>Пример</title>
-</h:head>
-<h:body>
-    <p:outputPanel id="header-panel" style="text-align: center">
-        <div class="header p-grid">
-            <div class="p-col">
-                Девятилов Роман
-<!--                <div class="header-holder"></div>-->
-            </div>
-            <div class="p-col">
-                Группа: P3212
-            </div>
-            <div class="p-col">
-                Вариант: 31380
-            </div>
-            <div class="p-col">
-                <h:outputText id="time" value="#{clock.time}"/>
-                <p:commandButton id="updateTime" style="display: none" action="#{clock.updateTime}" update="time"/>
+<f:view>
+    <h:head>
+        <title>Start</title>
+        <h:outputStylesheet library="css" name="start.css"/>
+        <h:outputScript library="js" name="time.js" target="head"/>
+    </h:head>
+
+    <h:body id="body">
+        <div id = "container">
+
+            <div class = "header1">Лабораторная работа №3 по Веб-программированию</div>
+            <div class = "header2">Вариант №10888</div>
+            <div class = "header3">Тарасенко Владислав</div>
+            <div class = "header4">Группа: <span class="P3111"> P3210</span></div>
+
+
+
+
+            <div id = "currentDateTime">
+                <div id = "name">Текущая дата и время:</div>
+                <div id = "date"></div>
+                <div id = "time"></div>
+
+                <h:form>
+                    <h:button label="Check" value="Go to checker" outcome="check" style="font-family: 'Arial Black'; font-size: 15px; background-color: #2a9d8f"/>
+                </h:form>
             </div>
         </div>
-    </p:outputPanel>
-<!--    <p:panelGrid columns="1">-->
-        <div class="body">
+    </h:body>
+</f:view>
 
-        </div>
-        <h:form>
-            <h:button label="Check" value="Go to checker" outcome="check"/>
-        </h:form>
-<!--    </p:panelGrid>-->
-    <script type="javascript">
-        setInterval(function () {
-            document.getElementById('updateTime').click();
-        }, 3000);
-    </script>
-    <h:outputStylesheet library="css" name="header.css"/>
-</h:body>
 </html>

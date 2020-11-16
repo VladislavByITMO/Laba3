@@ -12,9 +12,18 @@ public class EntryFactory {
 
     public Entry buildEntry(EntryBean bean) {
         Entry res = new Entry();
-        res.setX(bean.getX());
-        res.setY(bean.getY());
-        res.setR(bean.getR());
+        String xx = bean.getX().toString();
+        String yy = bean.getY().toString();
+        String rr = bean.getR().toString();
+
+        double scale = Math.pow(10, 4);
+        Double x = Math.ceil(Double.parseDouble(xx) * scale) / scale;
+        Double y = Math.ceil(Double.parseDouble(yy) * scale) / scale;
+        Double r = Math.ceil(Double.parseDouble(rr) * scale) / scale;
+
+        res.setX(x);
+        res.setY(y);
+        res.setR(r);
         res.setStatus(bean.getStatus());
         return res;
     }

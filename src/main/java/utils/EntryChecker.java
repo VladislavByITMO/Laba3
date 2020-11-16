@@ -10,42 +10,16 @@ import javax.faces.bean.SessionScoped;
 @SessionScoped
 public class EntryChecker {
 
+
     public boolean check(Entry entry) {
-        if (entry.getX() >= 0) {
-            if (entry.getY() >= 0) {
-                return check1(entry);
-            } else {
-                return check4(entry);
-            }
-        } else {
-            if (entry.getY() > 0) {
-                return check2(entry);
-            } else {
-                return check3(entry);
-            }
-        }
-    }
-
-    private boolean check1(Entry entry) {
-        return Math.sqrt(entry.getX() * entry.getX() + entry.getY() * entry.getY()) <= entry.getR();
-    }
-
-    private boolean check2(Entry entry) {
-        return false;
-    }
-
-    private boolean check3(Entry entry) {
         Double x = entry.getX();
         Double y = entry.getY();
         Double r = entry.getR();
-        return x == 0 && y >= -r ||
-                y == 0 && x >= -r / 2 ||
-                y >= -x - (r / 2);
-    }
 
-    private boolean check4(Entry entry) {
-        return entry.getX() <= entry.getR() / 2 &&
-                entry.getY() >= -entry.getR();
+        return (x > 0) && (y >= 0) && (x <= (r/2) && (y < r)) ||
+                (((x * x + y * y) <= r * r) && (y <= 0) && (x <= 0)) || ((y > (x / 2 - r / 2)) && (y <= 0) && (x > 0) && x <= r);
+
+
     }
 
 }

@@ -30,11 +30,11 @@ public class EntryBean {
     private Double r = 1.0;
     private EntryStatus status = EntryStatus.NOT_CALCULATED;
 
+
     public EntryStatus check() {
         return entryChecker.check(entryFactory.buildEntry(this)) ?
-                EntryStatus.LALA :
-                EntryStatus.EXCLUDED;
-
+                EntryStatus.yea:
+                EntryStatus.no;
     }
 
     public String save() {

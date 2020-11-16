@@ -38,7 +38,7 @@ public class JpaTest {
         entry.setR(1.0);
         entry.setX(1.0);
         entry.setY(1.0);
-        entry.setStatus(EntryStatus.EXCLUDED);
+        entry.setStatus(EntryStatus.no);
 
         em.persist(entry);
 
