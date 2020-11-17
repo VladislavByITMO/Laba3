@@ -88,6 +88,11 @@
             <artifactId>midnight</artifactId>
             <version>1.0.10</version>
         </dependency>
+        <dependency>
+            <groupId>org.primefaces.themes</groupId>
+            <artifactId>rocket</artifactId>
+            <version>1.0.10</version>
+        </dependency>
 
     </dependencies>
 

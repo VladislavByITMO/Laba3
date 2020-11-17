@@ -14,7 +14,7 @@ import javax.inject.Inject;
 import java.util.List;
 
 @ManagedBean(name = "entries")
-@ViewScoped
+@SessionScoped
 @Data
 public class EntriesListBean {
 

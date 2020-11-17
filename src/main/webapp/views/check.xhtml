@@ -26,7 +26,7 @@
     </h:form>
 
 
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="250" height="250" onclick="tryf()" id="graphic" style="box-shadow: 2px 2px 2px 2px forestgreen;  margin-left: auto;
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="250" height="250" onclick="tryf()" id="graphic" style="box-shadow: 1px 1px 1px 1px #04d3f6;  margin-left: auto;
     margin-right: auto; display: flex">
 
 
@@ -50,7 +50,7 @@
         <text class="draw_half_r" x="160" y="115">1/2</text>
         <text class="draw_r" x="210" y="115">1</text>
 
-        <text class="draw_-r" x="30" y="115" style="color: #6c11ff">-1</text>
+        <text class="draw_-r" x="30" y="115" style="color: #04d3f6">-1</text>
         <text class="draw_-half_r" x="80" y="115">-1/2</text>
 
         <text class="draw_half_r" x="130" y="80">1/2</text>
@@ -60,21 +60,21 @@
         <text class="draw_-r" x="130" y="220">-1</text>
 
         <polygon points="125,125 170,125 170,35 125,35"
-                 fill="yellow" fill-opacity="0.2" stroke="#6c11ff"></polygon>
+                 fill="04d3f6" fill-opacity="0.2" stroke="#4a72f1"></polygon>
 
 
         <path d="M 35 125 A 90 90 90 0 0 125 215 L 125 125 Z"
-              fill="red" fill-opacity="0.2" stroke="#6c11ff"></path>
+              fill="04d3f6" fill-opacity="0.2" stroke="#4a72f1"></path>
 
 
         <polygon points="125,125 215,125 125,170 "
-                 fill="blue" fill-opacity="0.2" stroke="#6c11ff"></polygon>
+                 fill="04d3f6" fill-opacity="0.2" stroke="#4a72f1"></polygon>
 
         <circle id="point" r="3" cx="200" cy="200" fill="#641AD5" stroke="#641AD5" visibility="hidden"/>
     </svg>
 
 
-    <h:form id="form">
+    <h:form id="form" style="box-shadow: 1px 1px 1px 1px #04d3f6">
         <p:panel id="panel" header="Entry" style="margin-bottom: 10px">
 
             <p:messages id="messages"/>
@@ -118,7 +118,7 @@
         </p:panel>
     </h:form>
     <p:dataTable id="entries_table" var="entry" value="#{entries.entries}"
-                 style="box-shadow: 1px 1px 1px 1px forestgreen">
+                 style="box-shadow: 1px 1px 1px 1px #04d3f6">
         <p:column headerText="id">
             <h:outputText value="#{entry.id}"/>
         </p:column>
